@@ -21,8 +21,8 @@ class _CheckBoxPageState extends State<CheckBoxPage> {
     super.initState();
     for (int i = 0; i < 20; i++) {
       _list.add({
-        "id": i,
-        "name": "第${i + 1}条",
+        "id": i + 1,
+        "name": "第${i + 1}条数据",
         "isChecked": false, //默认未选中
       });
     }
@@ -62,61 +62,67 @@ class _CheckBoxPageState extends State<CheckBoxPage> {
       );
     }
     return Container(
+      color: const Color.fromARGB(26, 188, 178, 178),
       padding: const EdgeInsets.all(10.0),
       child: Stack(
         alignment: Alignment.bottomCenter,
         children: [
-          //列表
-          ListView.builder(
-            itemCount: _list.length,
-            itemExtent: 80.0,
-            itemBuilder: (context, index) {
-              return _createListItem(_list[index]);
-            },
+          Container(
+            padding: EdgeInsets.only(bottom: _isShowCheckBoxBtn ? 0 : 30.0),
+            //列表
+            child: ListView.builder(
+              itemCount: _list.length,
+              itemExtent: 80.0,
+              itemBuilder: (context, index) {
+                return _createListItem(_list[index]);
+              },
+            ),
           ),
           //底部操作样式
           Offstage(
             offstage: _isShowCheckBoxBtn,
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
-              child: Container(
-                height: 40.0,
-                color: Colors.green,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        Checkbox(
-                          value: _checkValue,
-                          onChanged: (isSelected) {
-                            _deleteItems = []; //要删除的数组ID重置
-                            for (var item in _list) {
-                              item['isChecked'] = isSelected;
-                              if (isSelected == true) {
-                                //将数据ID放入数组
-                                _deleteItems.add(item['id'].toString());
-                              }
+            child: Container(
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                color: Color(AppColors.APP_THEME_COLOR),
+              ),
+              margin: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.only(right: 10.0),
+              height: 50.0,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Checkbox(
+                        value: _checkValue,
+                        onChanged: (isSelected) {
+                          _deleteItems = []; //要删除的数组ID重置
+                          for (var item in _list) {
+                            item['isChecked'] = isSelected;
+                            if (isSelected == true) {
+                              //将数据ID放入数组
+                              _deleteItems.add(item['id'].toString());
                             }
-                            setState(() {
-                              _checkValue = isSelected!;
-                            });
-                          },
-                        ),
-                        const Text('全选'),
-                      ],
-                    ),
-                    InkWell(
-                      child: const Text('删除'),
-                      onTap: () {
-                        Fluttertoast.showToast(
-                          msg: '要删除的数据:$_deleteItems',
-                          gravity: ToastGravity.CENTER,
-                        );
-                      },
-                    ),
-                  ],
-                ),
+                          }
+                          setState(() {
+                            _checkValue = isSelected!;
+                          });
+                        },
+                      ),
+                      const Text('全选'),
+                    ],
+                  ),
+                  InkWell(
+                    child: const Text('删除'),
+                    onTap: () {
+                      Fluttertoast.showToast(
+                        msg: '要删除的数据:$_deleteItems',
+                        gravity: ToastGravity.CENTER,
+                      );
+                    },
+                  ),
+                ],
               ),
             ),
           ),
@@ -130,10 +136,13 @@ class _CheckBoxPageState extends State<CheckBoxPage> {
     return Padding(
       padding: const EdgeInsets.fromLTRB(8, 5, 8, 5),
       child: Container(
-        height: 80.0,
-        color: Colors.red,
+        padding: const EdgeInsets.all(10.0),
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.all(Radius.circular(8.0)),
+        ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Offstage(
               offstage: _isShowCheckBoxBtn,
