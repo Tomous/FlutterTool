@@ -1,9 +1,9 @@
 import 'package:firstapp/constants/constants.dart';
-import 'package:firstapp/pages/drawpages/about_page.dart';
-import 'package:firstapp/pages/drawpages/check_box_page.dart';
-import 'package:firstapp/pages/drawpages/publish_tweet_page.dart';
-import 'package:firstapp/pages/drawpages/setting_page.dart';
-import 'package:firstapp/pages/drawpages/tweet_black_house.dart';
+import 'package:firstapp/pages/draw_pages/sub_pages/small_widget.dart';
+import 'package:firstapp/pages/draw_pages/sub_pages/check_box_page.dart';
+import 'package:firstapp/pages/draw_pages/sub_pages/publish_tweet_page.dart';
+import 'package:firstapp/pages/draw_pages/sub_pages/setting_page.dart';
+import 'package:firstapp/pages/draw_pages/sub_pages/tweet_black_house.dart';
 import 'package:flutter/material.dart';
 
 class HomeDrawer extends StatelessWidget {

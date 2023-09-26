@@ -1,9 +1,9 @@
 import 'package:firstapp/constants/constants.dart';
-import 'package:firstapp/pages/discovery_page.dart';
-import 'package:firstapp/pages/news_list_page.dart';
-import 'package:firstapp/pages/profile_page.dart';
-import 'package:firstapp/pages/tweet_page.dart';
-import 'package:firstapp/widgets/home_drawer.dart';
+import 'package:firstapp/pages/home_pages/discovery_page.dart';
+import 'package:firstapp/pages/home_pages/news_list_page.dart';
+import 'package:firstapp/pages/home_pages/profile_page.dart';
+import 'package:firstapp/pages/home_pages/tweet_page.dart';
+import 'package:firstapp/pages/draw_pages/home_drawer.dart';
 import 'package:firstapp/widgets/navigation_icon_view.dart';
 import 'package:flutter/material.dart';
 
@@ -110,7 +110,7 @@ class _HomePageState extends State<HomePage> {
                 Icons.error,
                 Icons.settings
               ],
-              menuTitleList: ['瀑布流布局', 'Checkbox复选框', '动弹小黑屋', '关于', '设置'],
+              menuTitleList: ['瀑布流布局', 'Checkbox复选框', '动弹小黑屋', '小组件', '设置'],
             )
           : null, //侧滑菜单
     );
