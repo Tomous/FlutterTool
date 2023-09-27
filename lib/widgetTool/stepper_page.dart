@@ -28,34 +28,32 @@ class _StepperPageState extends State<StepperPage> {
   ];
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Stepper(
-        steps: steps,
-        currentStep: currentStep,
-        onStepTapped: (value) {
-          setState(() {
-            currentStep = value;
-          });
-        },
-        onStepCancel: () {
-          setState(() {
-            if (currentStep > 0) {
-              currentStep -= 1;
-            } else {
-              currentStep = 0;
-            }
-          });
-        },
-        onStepContinue: () {
-          setState(() {
-            if (currentStep < steps.length - 1) {
-              currentStep += 1;
-            } else {
-              currentStep = 0;
-            }
-          });
-        },
-      ),
+    return Stepper(
+      steps: steps,
+      currentStep: currentStep,
+      onStepTapped: (value) {
+        setState(() {
+          currentStep = value;
+        });
+      },
+      onStepCancel: () {
+        setState(() {
+          if (currentStep > 0) {
+            currentStep -= 1;
+          } else {
+            currentStep = 0;
+          }
+        });
+      },
+      onStepContinue: () {
+        setState(() {
+          if (currentStep < steps.length - 1) {
+            currentStep += 1;
+          } else {
+            currentStep = 0;
+          }
+        });
+      },
     );
   }
 }

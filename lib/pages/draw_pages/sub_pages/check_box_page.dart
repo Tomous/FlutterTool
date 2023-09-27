@@ -95,6 +95,8 @@ class _CheckBoxPageState extends State<CheckBoxPage> {
                   Row(
                     children: [
                       Checkbox(
+                        activeColor: Colors.blue, // 设置选中框的颜色
+                        checkColor: Colors.white, // 设置选中标记的颜色
                         value: _checkValue,
                         onChanged: (isSelected) {
                           _deleteItems = []; //要删除的数组ID重置
@@ -135,33 +137,48 @@ class _CheckBoxPageState extends State<CheckBoxPage> {
   Widget _createListItem(item) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(8, 5, 8, 5),
-      child: Container(
-        padding: const EdgeInsets.all(10.0),
-        decoration: const BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.all(Radius.circular(8.0)),
-        ),
-        child: Row(
-          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Offstage(
-              offstage: _isShowCheckBoxBtn,
-              child: Checkbox(
-                value: item['isChecked'],
-                onChanged: (value) {
-                  if (value == false) {
-                    _deleteItems.remove(item['id'].toString());
-                  } else {
-                    _deleteItems.add(item['id'].toString());
-                  }
-                  setState(() {
-                    item['isChecked'] = value;
-                  });
-                },
+      //给Container添加点击手势，点击后改变isChecked的值
+      child: GestureDetector(
+        onTap: () {
+          if (_isShowCheckBoxBtn) {
+            return;
+          }
+          setState(() {
+            item['isChecked'] = !item['isChecked'];
+          });
+          item['isChecked']
+              ? _deleteItems.add(item['id'].toString())
+              : _deleteItems.remove(item['id'].toString());
+        },
+        child: Container(
+          padding: const EdgeInsets.all(10.0),
+          decoration: const BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.all(Radius.circular(8.0)),
+          ),
+          child: Row(
+            children: [
+              Offstage(
+                offstage: _isShowCheckBoxBtn,
+                child: Checkbox(
+                  activeColor: Colors.blue, // 设置选中框的颜色
+                  checkColor: Colors.white, // 设置选中标记的颜色
+                  value: item['isChecked'],
+                  onChanged: (value) {
+                    if (value == false) {
+                      _deleteItems.remove(item['id'].toString());
+                    } else {
+                      _deleteItems.add(item['id'].toString());
+                    }
+                    setState(() {
+                      item['isChecked'] = value;
+                    });
+                  },
+                ),
               ),
-            ),
-            Text(item['name']),
-          ],
+              Text(item['name']),
+            ],
+          ),
         ),
       ),
     );

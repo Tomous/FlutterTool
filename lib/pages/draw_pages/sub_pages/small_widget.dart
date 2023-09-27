@@ -59,26 +59,3 @@ class _AboutPageState extends State<AboutPage> {
     );
   }
 }
-/*
-ListView(
-          children: [
-            const WidgetTool(
-              title: 'DropdownMenu：',
-              widget: DropdownMenuPage(),
-            ),
-            WidgetTool(
-              title: '自定义字体：',
-              widget: Center(
-                child: Text(
-                  'this is a custom font',
-                  style: utils.getCustomFontTextStyle(),
-                ),
-              ),
-            ),
-            const WidgetTool(
-              title: 'Stepper：',
-              widget: StepperPage(),
-            ),
-          ],
-        )
-*/
