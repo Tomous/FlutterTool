@@ -1,4 +1,11 @@
 import 'package:firstapp/constants/constants.dart';
+import 'package:firstapp/home/pages/home_first_page.dart';
+import 'package:firstapp/home/pages/home_five_page.dart';
+import 'package:firstapp/home/pages/home_fourth_page.dart';
+import 'package:firstapp/home/pages/home_second_page.dart';
+import 'package:firstapp/home/pages/home_seven_page.dart';
+import 'package:firstapp/home/pages/home_six_page.dart';
+import 'package:firstapp/home/pages/home_third_page.dart';
 import 'package:firstapp/pages/draw_pages/home_drawer.dart';
 import 'package:flutter/material.dart';
 
@@ -19,13 +26,13 @@ const List<Tab> _tabs = [
   Tab(text: '活动'),
 ];
 final List<Widget> _tabContents = [
-  Container(color: Colors.red),
-  Container(color: Colors.black),
-  Container(color: Colors.white),
-  Container(color: Colors.blue),
-  Container(color: Colors.orange),
-  Container(color: Colors.yellow),
-  Container(color: Colors.green),
+  const HomeFirstPage(),
+  const HomeSecondPage(),
+  const HomeThirdPage(),
+  const HomeFourthPage(),
+  const HomeFivePage(),
+  const HomeSixPage(),
+  const HomeSevenPage(),
 ];
 
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
