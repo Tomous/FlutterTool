@@ -1,11 +1,11 @@
 import 'package:firstapp/constants/constants.dart';
-import 'package:firstapp/home/pages/home_first_page.dart';
-import 'package:firstapp/home/pages/home_five_page.dart';
-import 'package:firstapp/home/pages/home_fourth_page.dart';
-import 'package:firstapp/home/pages/home_second_page.dart';
-import 'package:firstapp/home/pages/home_seven_page.dart';
-import 'package:firstapp/home/pages/home_six_page.dart';
-import 'package:firstapp/home/pages/home_third_page.dart';
+import 'package:firstapp/home/pages/home_first/home_first_page.dart';
+import 'package:firstapp/home/pages/home_five/home_five_page.dart';
+import 'package:firstapp/home/pages/home_fourth/home_fourth_page.dart';
+import 'package:firstapp/home/pages/home_second/home_second_page.dart';
+import 'package:firstapp/home/pages/home_seven/home_seven_page.dart';
+import 'package:firstapp/home/pages/home_six/home_six_page.dart';
+import 'package:firstapp/home/pages/home_third/home_third_page.dart';
 import 'package:firstapp/pages/draw_pages/home_drawer.dart';
 import 'package:flutter/material.dart';
 
@@ -43,7 +43,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     super.initState();
     _tabController = TabController(
       length: _tabs.length,
-      vsync: this,
+      vsync: this, // 将当前状态对象作为 TickerProvider
       initialIndex: 1, // 默认选中哪一个
     );
     _tabController.addListener(() {
