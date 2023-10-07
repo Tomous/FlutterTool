@@ -5,7 +5,9 @@ import 'package:dio/dio.dart';
 import 'http.dart';
 
 class HttpService {
+  // ignore: constant_identifier_names
   static const String BASE_URL = 'https://api.douguo.net/';
+  // ignore: constant_identifier_names
   static const String GET_BASE_URL = 'https://m.douguo.com/';
 
   //首页推荐数据

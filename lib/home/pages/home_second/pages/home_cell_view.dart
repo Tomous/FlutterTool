@@ -1,17 +1,35 @@
+import 'package:firstapp/constants/app_dialog.dart';
+import 'package:firstapp/constants/cached_network_Image.dart';
 import 'package:firstapp/constants/constants.dart';
+import 'package:firstapp/home/pages/home_second/model/cook_info_model.dart';
+import 'package:firstapp/home/pages/home_second/model/user_model.dart';
 import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
 
 class HomeCellView extends StatefulWidget {
-  const HomeCellView({super.key});
+  final CookInfoModel model;
+  const HomeCellView({super.key, required this.model});
 
   @override
   State<HomeCellView> createState() => _HomeCellViewState();
 }
 
 class _HomeCellViewState extends State<HomeCellView> {
+  bool isLike = false;
+
   @override
   Widget build(BuildContext context) {
+    UserModel user = widget.model.a!;
+
+    /// 图片高度
+    double imgHeight = 0;
+    if (widget.model.ph == 'null') {
+      imgHeight = MediaQuery.of(context).size.width / 3 * 2;
+    } else {
+      imgHeight = int.parse(widget.model.ph) *
+          MediaQuery.of(context).size.width /
+          int.parse(widget.model.pw);
+    }
     return Container(
       color: Colors.white,
       child: Column(
@@ -25,6 +43,8 @@ class _HomeCellViewState extends State<HomeCellView> {
                 Container(
                   width: 34.0,
                   height: 34.0,
+                  margin:
+                      const EdgeInsets.only(left: 8.0, top: 8.0, bottom: 8.0),
                   decoration: BoxDecoration(
                     color: Colors.red,
                     borderRadius: BorderRadius.circular(17.0),
@@ -32,28 +52,27 @@ class _HomeCellViewState extends State<HomeCellView> {
                   child: ClipOval(
                     child: FadeInImage.assetNetwork(
                       placeholder: 'assets/images/image1.jpeg',
-                      image:
-                          'https://cp1.douguo.com/upload/tuan/a/4/e/a4c12ff33797dc8a271812f1e7382a5e.jpeg',
+                      image: user.p!,
                       fit: BoxFit.cover,
                     ),
                   ),
                 ),
                 const SizedBox(width: 8.0),
-                const Text(
-                  '标题',
+                Text(
+                  user.n!,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 13,
                     fontWeight: FontWeight.bold,
                     color: AppColors.black,
                   ),
                 ),
                 const SizedBox(width: 8),
-                const Text(
-                  'LV.2',
+                Text(
+                  'LV.${user.lvl.toString()}',
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 11,
                     color: AppColors.yellow,
                     fontStyle: FontStyle.italic,
@@ -63,16 +82,18 @@ class _HomeCellViewState extends State<HomeCellView> {
               ],
             ),
             onTap: () {
-              print('点击了用户头像条');
+              AppDialog.showText(context, title: '点击了用户头像条');
             },
           ),
 
           /// 中间图片
-          Image.asset(
-            'assets/images/image10.jpeg',
-            fit: BoxFit.cover,
-            width: MediaQuery.of(context).size.width,
-            height: 300.0,
+          InkWell(
+            child: CachedImage(
+              url: widget.model.img!,
+              width: MediaQuery.of(context).size.width,
+              height: imgHeight,
+            ),
+            onTap: () => AppDialog.showText(context, title: '点击了图片'),
           ),
 
           /// 收藏用户头像 和 点赞 评论...按钮
@@ -95,20 +116,24 @@ class _HomeCellViewState extends State<HomeCellView> {
                   children: [
                     LikeButton(
                       size: 22,
-                      isLiked: true,
+                      isLiked: isLike,
                       likeBuilder: (isLiked) {
                         return Image.asset(
                           isLiked
-                              ? 'assets/common/hot.png'
-                              : 'assets/common/hot.png',
+                              ? 'assets/common/collcetionicon_on.png'
+                              : 'assets/common/collcetionicon_off.png',
                           width: 18,
                           height: 18,
                         );
                       },
                       onTap: (isLiked) {
                         setState(() {
-                          isLiked = !isLiked;
+                          isLike = !isLiked;
                         });
+                        AppDialog.showText(
+                          context,
+                          title: isLike ? '点击了不喜欢按钮' : '点击了喜欢按钮',
+                        );
                         return Future.value(isLiked);
                       },
                     ),
@@ -141,9 +166,9 @@ class _HomeCellViewState extends State<HomeCellView> {
 
           Container(
             margin: const EdgeInsets.only(left: 10),
-            child: const Text(
-              '这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容',
-              style: TextStyle(
+            child: Text(
+              widget.model.n!,
+              style: const TextStyle(
                 fontSize: 15,
                 color: AppColors.deepTextColor,
               ),

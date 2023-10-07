@@ -1,3 +1,4 @@
+import 'package:firstapp/constants/app_dialog.dart';
 import 'package:firstapp/constants/constants.dart';
 import 'package:firstapp/home/pages/home_first/home_first_page.dart';
 import 'package:firstapp/home/pages/home_five/home_five_page.dart';
@@ -50,7 +51,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       _tabController.index; // 获取当前选中的索引
       if (_tabController.indexIsChanging) {
         //只在索引变化时执行代码，而不是每次addListener被调用时都执行
-        print('当前选中的索引：${_tabController.index}');
+        AppDialog.showText(context, title: '当前选中的索引：${_tabController.index}');
       }
     });
   }

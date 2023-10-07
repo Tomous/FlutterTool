@@ -1,5 +1,6 @@
 import 'package:card_swiper/card_swiper.dart';
-import 'package:firstapp/home/pages/home_second/model/banner_model.dart';
+import 'package:firstapp/constants/app_dialog.dart';
+import 'package:firstapp/home/pages/home_third/model/banner_model.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -64,7 +65,7 @@ class _HomeBannerViewState extends State<HomeBannerView> {
       //       ///选中时的颜色
       //       activeColor: Colors.white)
       onTap: (index) {
-        print("点击了第${index + 1}张图片");
+        AppDialog.showText(context, title: "点击了第${index + 1}张图片");
       },
     );
   }
