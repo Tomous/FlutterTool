@@ -45,6 +45,11 @@ dependencies:
   cached_network_image: ^3.2.3 #加载网络图片/图片缓存
   path_provider: ^2.0.3 #用于获取设备上的常用目录路径
   flutter_easyrefresh: ^2.2.1 #下拉刷新
+  get: ^4.6.6 #路由管理
+  keyboard_dismisser: 3.0.0 #点击空白区域隐藏键盘
+  flutter_easyloading: ^3.0.5 #加载动画、弹框
+  shared_preferences: ^2.2.2 #本地存储
+  provider: ^6.0.5 #全局状态管理
 dev_dependencies:
   flutter_test:
     sdk: flutter

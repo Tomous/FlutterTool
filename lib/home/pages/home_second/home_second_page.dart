@@ -1,3 +1,4 @@
+import 'package:firstapp/constants/app_dialog.dart';
 import 'package:firstapp/home/pages/home_second/model/cook_info_model.dart';
 import 'package:firstapp/home/pages/home_second/pages/home_cell_view.dart';
 import 'package:firstapp/http_service/http_service.dart';
@@ -120,8 +121,16 @@ class _HomeSecondPageState extends State<HomeSecondPage>
         itemCount: _cookInfoList.length,
         shrinkWrap: true, //用于指定列表是否应根据其内容的大小自动调整大小
         itemBuilder: (context, index) {
-          return HomeCellView(
-            model: _cookInfoList[index],
+          return InkWell(
+            child: HomeCellView(
+              model: _cookInfoList[index],
+            ),
+            onTap: () {
+              AppDialog.showText(
+                context,
+                title: '点击了当前cell:id${_cookInfoList[index].id}',
+              );
+            },
           );
         },
       ),
@@ -129,6 +138,5 @@ class _HomeSecondPageState extends State<HomeSecondPage>
   }
 
   @override
-  // TODO: implement wantKeepAlive
   bool get wantKeepAlive => true;
 }

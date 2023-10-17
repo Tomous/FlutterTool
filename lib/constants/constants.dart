@@ -53,6 +53,12 @@ abstract class AppColors {
 
   static const Color background = Color.fromRGBO(248, 248, 248, 1);
 
+  static Color text1 = const Color(0xFF191D32);
+  static Color text2 = const Color(0xFF344156);
+  static Color text3 = const Color(0xFF474D66);
+  static Color text4 = const Color(0xFF6B748F);
+  static Color text5 = const Color(0xFF8B99AF);
+  static Color text6 = const Color(0xFFA3B4CC);
   // 颜色值转换
   // static Color string2Color(String colorString) {
   //   int value = 0x00000000;

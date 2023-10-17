@@ -68,6 +68,7 @@ class HttpRequest {
   /// 设置鉴权请求头
   Options setAuthorizationHeader(Options requestOptions) {
     String? token;
+    // ignore: unnecessary_null_comparison
     if (token != null) {
       requestOptions.headers!['token'] = token;
     }

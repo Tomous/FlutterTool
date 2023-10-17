@@ -1,4 +1,5 @@
 import 'package:firstapp/constants/constants.dart';
+import 'package:firstapp/login/login.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -104,7 +105,10 @@ class _ProfilePageState extends State<ProfilePage> {
   }
 
   void _login() {
-    // Navigator.push(
-    //     context, MaterialPageRoute(builder: (context) => const LoginWebPage()));
+    Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(builder: (context) => const LoginPage()),
+      (route) => false,
+    );
   }
 }
