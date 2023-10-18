@@ -81,6 +81,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               tabs: _tabs,
               isScrollable: true,
               controller: _tabController,
+              labelColor: Colors.blue,
               indicatorColor: Colors.blue,
               labelPadding: const EdgeInsets.fromLTRB(15.0, 0, 15.0, 0),
               onTap: (value) {},
