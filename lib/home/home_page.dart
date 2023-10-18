@@ -18,7 +18,7 @@ class HomePage extends StatefulWidget {
 }
 
 const List<Tab> _tabs = [
-  Tab(text: '关注'),
+  Tab(text: '承诺签约'),
   Tab(text: '推荐'),
   Tab(text: '笔记'),
   Tab(text: '视频'),

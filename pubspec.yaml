@@ -50,6 +50,9 @@ dependencies:
   flutter_easyloading: ^3.0.5 #加载动画、弹框
   shared_preferences: ^2.2.2 #本地存储
   provider: ^6.0.5 #全局状态管理
+  dotted_border: ^2.1.0 #边框
+  hand_signature: ^3.0.1 #手写签名
+  date_format: ^2.0.7 #时间格式化
 dev_dependencies:
   flutter_test:
     sdk: flutter

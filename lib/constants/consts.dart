@@ -20,4 +20,8 @@ class StorageKeys {
   static String NOTICE_UPDATE_TIME = 'notice_update_time';
   // 是否开启语音唤醒
   static String VOICE_WAKE_UP_ENABLE = 'voice_wake_up_enable';
+
+  //承诺签署协议
+  static String SIGNATUREFILE =
+      '为了保证您在签署协议过程中，所签署的协议内容准确无误，请您仔细阅读本协议并确保您已充分理解本协议各条款。\n\n1. 签署本协议即表示您同意并接受本协议的全部内容。\n2. 签署本协议即表示您同意并接受本协议的全部内容。\n3. 签署本协议即表示您同意并接受本协议的全部内容。\n4. 签署本协议即表示您同意并接受本协议的全部内容。\n5. 签署本协议即表示您同意并接受本协议的全部内容。\n6. 签署本协议即表示您同意并接受本协议的全部内容。';
 }

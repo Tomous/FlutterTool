@@ -122,8 +122,20 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "date_format",
+      "rootUri": "file:///Users/chengzi/.pub-cache/hosted/pub.flutter-io.cn/date_format-2.0.7",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "dio",
       "rootUri": "file:///Users/chengzi/.pub-cache/hosted/pub.flutter-io.cn/dio-4.0.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "dotted_border",
+      "rootUri": "file:///Users/chengzi/.pub-cache/hosted/pub.flutter-io.cn/dotted_border-2.1.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -230,6 +242,12 @@
       "languageVersion": "2.19"
     },
     {
+      "name": "hand_signature",
+      "rootUri": "file:///Users/chengzi/.pub-cache/hosted/pub.flutter-io.cn/hand_signature-3.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
       "name": "http",
       "rootUri": "file:///Users/chengzi/.pub-cache/hosted/pub.flutter-io.cn/http-0.13.6",
       "packageUri": "lib/",
@@ -316,6 +334,18 @@
     {
       "name": "path",
       "rootUri": "file:///Users/chengzi/.pub-cache/hosted/pub.flutter-io.cn/path-1.8.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "path_drawing",
+      "rootUri": "file:///Users/chengzi/.pub-cache/hosted/pub.flutter-io.cn/path_drawing-1.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "path_parsing",
+      "rootUri": "file:///Users/chengzi/.pub-cache/hosted/pub.flutter-io.cn/path_parsing-1.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -572,7 +602,7 @@
       "languageVersion": "2.19"
     }
   ],
-  "generated": "2023-10-17T09:30:57.604112Z",
+  "generated": "2023-10-18T06:18:46.814593Z",
   "generator": "pub",
   "generatorVersion": "3.1.3"
 }
