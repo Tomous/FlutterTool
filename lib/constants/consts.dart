@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class StorageKeys {
   // 登录失败次数
   static String SIGNIN_FAILED_TIMES = 'signin_failed_times';
@@ -25,3 +27,6 @@ class StorageKeys {
   static String SIGNATUREFILE =
       '为了保证您在签署协议过程中，所签署的协议内容准确无误，请您仔细阅读本协议并确保您已充分理解本协议各条款。\n\n1. 签署本协议即表示您同意并接受本协议的全部内容。\n2. 签署本协议即表示您同意并接受本协议的全部内容。\n3. 签署本协议即表示您同意并接受本协议的全部内容。\n4. 签署本协议即表示您同意并接受本协议的全部内容。\n5. 签署本协议即表示您同意并接受本协议的全部内容。\n6. 签署本协议即表示您同意并接受本协议的全部内容。';
 }
+
+const Divider divider = Divider(
+    height: 0, color: Color.fromARGB(255, 206, 210, 213), thickness: 0.3);

@@ -1,6 +1,6 @@
 import 'package:firstapp/class_room/class_room_page.dart';
 import 'package:firstapp/home/home_page.dart';
-import 'package:firstapp/pages/home_pages/profile_page.dart';
+import 'package:firstapp/profile/profile_page.dart';
 import 'package:firstapp/shop_car/shop_car_page.dart';
 import 'package:firstapp/store/store_page.dart';
 import 'package:flutter/material.dart';

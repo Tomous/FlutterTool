@@ -1,5 +1,6 @@
 import 'package:firstapp/constants/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SearchBarPage extends StatefulWidget {
   const SearchBarPage({super.key});
@@ -28,6 +29,7 @@ class _SearchBarPageState extends State<SearchBarPage> {
       ),
       child: TextField(
         controller: _searchController,
+        onSubmitted: (value) => Get.snackbar('提示', '点击了搜索$value'),
         decoration: InputDecoration(
           hintText: '输入关键词搜索',
           contentPadding: const EdgeInsets.symmetric(vertical: 4.0),
