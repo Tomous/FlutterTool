@@ -30,3 +30,5 @@ class StorageKeys {
 
 const Divider divider = Divider(
     height: 0, color: Color.fromARGB(255, 206, 210, 213), thickness: 0.3);
+
+const SizedBox nothing = SizedBox.shrink();

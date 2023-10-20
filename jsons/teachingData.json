@@ -1,0 +1,15 @@
+{
+    "id": 2,
+    "is_online": 1,
+    "is_toped": 0,
+    "train_type": "1",
+    "train_title": "string",
+    "train_pic": "string",
+    "train_entity": "string",
+    "train_video": "string",
+    "user_account": "admin",
+    "toped_time": null,
+    "create_time": "2023-04-19 10:47:15",
+    "update_time": "2023-04-19 16:12:30",
+    "deleted": 0
+}

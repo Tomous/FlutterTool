@@ -1,4 +1,6 @@
 // 大按钮
+import 'package:firstapp/constants/constants.dart';
+import 'package:firstapp/constants/consts.dart';
 import 'package:flutter/material.dart';
 
 class LargeButton extends StatelessWidget {
@@ -37,6 +39,46 @@ class LargeButton extends StatelessWidget {
         children: icon != null
             ? [Icon(icon), const SizedBox(width: 5), Text(text)]
             : [Text(text)],
+      ),
+    );
+  }
+}
+
+class Empty extends StatelessWidget {
+  final String? text;
+  final String? icon;
+  final Widget? child;
+  final double? height;
+
+  const Empty({
+    Key? key,
+    this.text,
+    this.icon = 'empty_3.png',
+    this.child,
+    this.height = 360,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: height,
+      child: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Image.asset(
+              'assets/icons/$icon',
+              width: 150,
+              fit: BoxFit.contain,
+            ),
+            Text(
+              text ?? '暂无数据',
+              style: TextStyle(fontSize: 13, color: AppColors.text6),
+            ),
+            const SizedBox(height: 20),
+            child ?? nothing,
+          ],
+        ),
       ),
     );
   }

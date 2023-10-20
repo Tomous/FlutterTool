@@ -1,8 +1,8 @@
-import 'package:firstapp/class_room/class_room_page.dart';
-import 'package:firstapp/home/home_page.dart';
-import 'package:firstapp/profile/profile_page.dart';
-import 'package:firstapp/shop_car/shop_car_page.dart';
-import 'package:firstapp/store/store_page.dart';
+import 'package:firstapp/pages/class_room/class_room_page.dart';
+import 'package:firstapp/pages/home/home_page.dart';
+import 'package:firstapp/pages/profile/profile_page.dart';
+import 'package:firstapp/pages/shop_car/shop_car_page.dart';
+import 'package:firstapp/pages/store/store_page.dart';
 import 'package:flutter/material.dart';
 import 'package:proste_indexed_stack/proste_indexed_stack.dart';
 
